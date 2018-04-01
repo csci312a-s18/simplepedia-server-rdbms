@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "description": "This is an RDBMS-backed version of the Simplepedia server",
-  "main": "server.js",
+  "main": "index.js",
+  "engines": {
+    "node": "8.9.x"
+  },
   "scripts": {
     "test": "jest",
     "start": "node index.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "heroku-postbuild": "npm install"
   },
+  "cacheDirectories": [
+    "node_modules"
+  ],
   "keywords": [
     "server",
     "simplepedia"
@@ -24,7 +31,11 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "db-errors": "^0.1.0",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "knex": "^0.14.4",
+    "objection": "^1.1.0",
+    "pg": "^7.4.1",
+    "sqlite3": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^4.15.0",

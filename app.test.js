@@ -54,6 +54,11 @@ describe('Simplepedia API', () => {
         .expect(400);
     });
 
+    test('Should reject article with invalid edited time', () => {
+      return request(app).post('/articles').send({ title: 'A title', edited: '4' })
+        .expect(400);
+    });
+
     test('Should create a default extract', () => {
       const newArticle = { title: 'A title', edited: '2016-11-19T22:57:32.639Z' };
       return request(app).post('/articles').send(newArticle)

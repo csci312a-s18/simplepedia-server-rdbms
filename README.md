@@ -34,6 +34,10 @@ To prepare the development sqlite3 database (`simplepedia.db`):
 
 	and then querying the available articles: `select * from Article;`.
 
+### Testing
+
+The test suite can be launched with `npm test`.
+
 ### Linting with eslint
 
 The server is configured with the aggressive AirBnB eslint rules. These rules
